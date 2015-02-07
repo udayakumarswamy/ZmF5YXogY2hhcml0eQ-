@@ -43,7 +43,30 @@ jQuery(function() {
             }
             ?>
     </ul>
-    </div>   
+    </div>
+    
+    
+    <div class="page-title">Videos</div>
+    	
+     <div class="image_grid">
+    <ul class="da-thumbs"><?php
+            $video_sql = "SELECT VideoID, VideoURL, VideoName, VideoStatus FROM sw_videos";
+            $video_result = mysql_query($video_sql);
+            if(mysql_num_rows($video_result) > 0) {
+                while ($video_data = mysql_fetch_assoc($video_result)) {
+                  ?>
+                <li>
+                    <img src="http://img.youtube.com/vi/<?php echo $video_data['VideoURL']; ?>/mqdefault.jpg" alt="portfolio" width="100%">
+                    <article class="da-animate da-slideFromRight" style="display: block;">
+                        <h3><a href="video-details.php?VideoID=<?php echo $video_data['VideoID']; ?>"><?php echo $video_data['VideoName']; ?></a></h3>
+                    </article>
+                </li>
+                <?php
+              }
+            }
+            ?>
+    </ul>
+    </div>
         
     </div>
 </div>

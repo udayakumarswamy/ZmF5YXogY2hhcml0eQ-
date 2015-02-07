@@ -19,11 +19,18 @@
 </div>
 <div class="rgt-bar-box">
 <div class="tit-box1">Videos</div>
-	<div class="video-box"></div>
+<?php
+            $video_sql = "SELECT VideoID, VideoURL, VideoName, VideoStatus FROM sw_videos";
+            $video_result = mysql_query($video_sql);
+            if(mysql_num_rows($video_result) > 0) {
+                $video_data = mysql_fetch_assoc($video_result);
+                ?>	<div class="video-box"><a href="video-details.php?VideoID=<?php echo $video_data['VideoID']; ?>"><img src="http://img.youtube.com/vi/<?php echo $video_data['VideoURL']; ?>/mqdefault.jpg" style="    width: 100%;    height: 100%;"></a></div>
     <ul class="video-list">
-    	<li><a href="#"><img src="images/portfolio2.jpg" alt="#"></a></li>
-        <li><a href="#"><img src="images/portfolio2.jpg" alt="#"></a></li>
-        <li><a href="#"><img src="images/portfolio2.jpg" alt="#"></a></li>
+<?php                while ($video_data = mysql_fetch_assoc($video_result)) {
+                    ?> <li><a href="video-details.php?VideoID=<?php echo $video_data['VideoID']; ?>"><img src="http://img.youtube.com/vi/<?php echo $video_data['VideoURL']; ?>/default.jpg" ></a></li> <?php
+                }
+            }
+?>
     </ul>
     <div class="more1 margin"><a href="gallery.php">More...</a></div>
 </div>

@@ -117,6 +117,17 @@
                           </ul>
                         </li>
                         <li>
+                          <a href="#"> Videos<span class="fa arrow"></span></a>
+                          <ul class="nav nav-second-level">
+                            <li>
+                                <a href="video-add.php"><i class="fa fa-edit fa-fw"></i> Add New</a>
+                            </li>
+                            <li>
+                                <a href="video-list.php"><i class="fa fa-table fa-fw"></i> List</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
                           <a href="#"> Admins<span class="fa arrow"></span></a>
                           <ul class="nav nav-second-level">
                             <li>

@@ -10,6 +10,9 @@ if (isset($_GET['AdminID'])) {
 } elseif (isset($_GET['EventID'])) {
   $event_sql = "DELETE FROM sw_events WHERE EventID = ".intval($_GET['EventID']);
   $event_result = mysql_query($event_sql);
+} elseif (isset($_GET['VideoID'])) {
+  $video_sql = "DELETE FROM sw_videos WHERE VideoID = ".intval($_GET['VideoID']);
+  $video_result = mysql_query($video_sql);
 } elseif (isset($_GET['ImageID'])) {
 	$filename =  "../uploads/".$_GET['ImageName'];
     unlink($filename);
